@@ -1,0 +1,19 @@
+.flex {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+
+.border {
+    border: 1px solid #000;
+}
