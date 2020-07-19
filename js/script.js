@@ -47,3 +47,4 @@ document.querySelector(".products").classList.add("flex");
 document.querySelectorAll(".product__item").forEach(item => item.classList.add("border"));
 
 // Заяпятая вывводится из-за масива данных. join("") - уберет запятую
+// Читать
