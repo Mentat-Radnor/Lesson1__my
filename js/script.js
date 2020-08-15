@@ -25,19 +25,19 @@ const products = [{
         price: 2000,
     },
 ];
+let block = document.querySelector('.products')
 
 const renderPrice = (title = "product", price = "290", img = "https://picsum.photos/200") => {
-    return `<div class="product__item">
-        <h2 class="product__title">${title}</h2>
-        <img alt="picture" src="${img}">
-        <p class="product__price">${price}</p>
-        <button class="by-btn">Добавить в корзину</button>
-    </div>`;
+    return block.insertAdjacentHTML("beforeend", `<div class="product__item">
+    <h2 class="product__title">${title}</h2>
+    <img class="picture" alt="picture" src="${img}">
+    <p class="product__price">${price}</p>
+    <button class="by-btn">Добавить в корзину</button>
+</div>`)
 };
 
 const renderProducts = list => {
-    const productList = list.map(item => renderPrice(item.title, item.price));
-    document.querySelector('.products').innerHTML = productList.join("");
+    products.forEach(element => renderPrice(element.title, element.price));
 }
 
 renderProducts(products);
@@ -45,6 +45,3 @@ renderProducts(products);
 document.querySelector('header').classList.add("header")
 document.querySelector(".products").classList.add("flex");
 document.querySelectorAll(".product__item").forEach(item => item.classList.add("border"));
-
-// Заяпятая вывводится из-за масива данных. join("") - уберет запятую
-// Читать
