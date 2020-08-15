@@ -1,0 +1,28 @@
+.products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 25%;
+    background: #23b371;
+    margin: 20px;
+}
+
+.product__img {
+    width: 100%;
+}
+
+.product__title {
+    color: #fff;
+}
+
+.product__price {
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+}
