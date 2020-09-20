@@ -3,15 +3,15 @@
 class productList {
     constructor(container = ".products") {
         this.constructor = container;
-        this.goods = [];
-        this.Allproducts = [];
+        this.#goods = [];
+        this.allProducts = [];
 
-        this.fetchProduct();
-        this.render();
+        this.#fetchProduct();
+        this.#render();
     }
 
-    fetchProduct() {
-        this.goods = [{
+    #fetchProduct() {
+        this.#goods = [{
                 id: 1,
                 name: "Shirt",
                 price: 2000,
@@ -39,18 +39,18 @@ class productList {
         ];
     }
 
-    render() {
+    #render() {
         const block = document.querySelector(this.constructor);
         for (let product of this.goods) {
             const productObject = new productItem(product);
 
-            this.Allproducts.push(productObject);
+            this.allProducts.push(productObject);
             block.insertAdjacentHTML("beforeend", productObject.render());
         }
     }
 
     productsCalc() {
-        return this.goods.reduce((sum, {
+        return this.#goods.reduce((sum, {
             price
         }) => sum + price, 0)
     }
@@ -60,6 +60,7 @@ class productItem {
     constructor(product, img = 'https://picsum.photos/200') {
         this.title = product.name;
         this.price = product.price;
+        this.id = product.id
         this.img = img;
     }
 
@@ -79,6 +80,7 @@ class productCart {
         this.calcPrice(); // Показываем сумму товаров находящихся в корзине
     }
 }
+
 
 const list = new productList();
 console.log(list.productsCalc());
